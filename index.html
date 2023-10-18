@@ -30,15 +30,25 @@
                         
                         <label for="lblNumber">Número de dígitos de pi</label>
                         <input type="number" id="lblNumDigits" value="100" />
-                      
-                        <button id="iniciar">Generar</button>
+
+                        <button type="button" class="btn btn-dark" id="cargar-pi">Cargar pi 1MB</button>
+
+                        <button type="button" class="btn btn-dark" id="iniciar">Generar</button>
+                        <button type="button" class="btn btn-dark" id="detener">Detener</button>
                   </div>
               </div>
           </div>
           <div class="card" style="flex-grow: 1;">
               <div class="card-body">
-                      <div>
-                        <textarea id="txtRes" name="txtRes" style="width: 100%;"/>
+                      <div style="display: flex; flex-grow: 1; height: 100%; flex-direction: column;">
+                        <textarea id="txtRes" name="txtRes">Resultado</textarea>
+                        <div id="grafica-btns-container">
+                          <button type="button" class="btn btn-dark" id="mostrarGrafica">Mostrar grafica</button>
+                          <div id="txtNumDigitsContainer">
+                            <p>Número de digitos calculados: </p>
+                            <p id="lblNumDigitsCalculated">0</p>
+                          </div>
+                        </div>
                       </div>
               </div>
           </div>

@@ -1,3 +1,5 @@
+var DETENER_CALCULO = false;
+
 function calcularPiChudnovsky(n) {
     // Definir la precisión deseada (n + 1 dígitos)
     // Ajustar la precisión para obtener n + 1 dígitos
@@ -46,22 +48,34 @@ const sleep = (millis) => {
     const btnIniciar = document.getElementById("iniciar");
     const inputNumDigits = document.getElementById("lblNumDigits");
     const txtRest = document.getElementById("txtRes");
+    const txtNumDigits = document.getElementById("lblNumDigitsCalculated");
+    const btnDetener = document.getElementById("detener");
+
+    btnDetener.addEventListener("click", function() {
+        DETENER_CALCULO = true;
+    });
 
     btnIniciar.addEventListener("click", async function() {
 
-        let iter = inputNumDigits.value;
+        DETENER_CALCULO = false;
 
-        if( iter == null || iter == undefined || iter == "" || iter <= 0) 
+        let iter = parseInt(inputNumDigits.value)+1;
+
+        if( iter == null || iter == undefined || iter == "" || iter <= 0){
             iter = 100;
+        }
         
-        for(let i=0; i<=iter; i++){
+        for(let i=0; i<=(iter); i++){
             let pi_res = calcularPiChudnovsky(i);
             txtRest.value = pi_res+"";
-            console.log("Valor de pi para 200 digitos:", i);
+            txtNumDigits.innerText = i > 1 && i < 2 ? i : (i-1);
             if (i<30)
                 await sleep(50);
             else   
                 await sleep(1);
+
+            if (DETENER_CALCULO)
+                break;
         }
         
     });
