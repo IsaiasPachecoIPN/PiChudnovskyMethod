@@ -28,10 +28,14 @@
         </div>
       </nav>
       <div class="container" id="mainContainer" style="display: flex; flex-direction: row; gap:20px; margin: 20px; min-width: 95%; height: 80vh;">
-          <div class="card">
+          <div class="card" style="max-width: 40%;">
               <div class="card-body">
                   <div style="display: flex; gap: 10px; flex-direction: column;">
                       <h4>Controles</h4>
+
+                        <div id="divInfo">
+                          <p>Calculo del los n-digitos de pi utilizando el método de <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal1">Chudnovsky</button></p>
+                        </div>
                         
                         <label for="lblNumber">Número de dígitos de pi</label>
                         <input type="number" id="lblNumDigits" value="100" />
@@ -83,6 +87,29 @@
           </div>
         </div>
       </div>
+
+      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Información</h5>
+              <button type="button" class="btn-close btn-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div>
+                <p>El algoritmo de Chudnovsky es un método rápido para calcular los dígitos de π. Fue usado por los hermanos Chudnovsky para calcular más de mil millones de dígitos. Fue usado en el cálculo, récord del mundo de 2.7 billones de dígitos de π en diciembre de 2009, 5 billones de dígitos de π en agosto de 2010, y 10 billones de dígitos de π en octubre de 2011.</p>
+                <p>El algoritmo está basado en la siguiente rápida serie hipergeométrica generalizada convergente:</p>
+                <img src="./formula.svg" alt="Chudnovsky" width="100%" height="100%">
+                <p>Esta identidad es similar a algunas de las fórmulas de Ramanujan que están relacionadas con π.</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 </body>
 </html>

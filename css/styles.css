@@ -4,6 +4,17 @@
     --bs-primary:  #7c0040 !important;
 }
 
+#divInfo{
+    display: flex;
+    justify-content: center;
+}
+
+#divInfoBtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 #txtNumDigitsContainer{
     font-size: 12px;
     flex-grow: 1;
