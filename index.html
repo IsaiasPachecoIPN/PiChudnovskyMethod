@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="./css//styles.css"> </link>
     <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js'></script>
     <script src="./js/bootstrap.min.js"> </script>
+    <script src="./js/pi_1mb.js"> </script>
     <script src="utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body style="height: 100vh; width: 100vw;">
@@ -22,7 +24,7 @@
           </a>
         </div>
       </nav>
-      <div class="container" id="mainContainer" style="display: flex; flex-direction: row; gap:20px; margin: 20px; min-width: 95%;">
+      <div class="container" id="mainContainer" style="display: flex; flex-direction: row; gap:20px; margin: 20px; min-width: 95%; height: 80vh;">
           <div class="card">
               <div class="card-body">
                   <div style="display: flex; gap: 10px; flex-direction: column;">
@@ -31,7 +33,7 @@
                         <label for="lblNumber">Número de dígitos de pi</label>
                         <input type="number" id="lblNumDigits" value="100" />
 
-                        <button type="button" class="btn btn-dark" id="cargar-pi">Cargar pi 1MB</button>
+                        <button type="button" class="btn btn-dark" id="cargar-pi-1mb">Cargar pi 1MB</button>
 
                         <button type="button" class="btn btn-dark" id="iniciar">Generar</button>
                         <button type="button" class="btn btn-dark" id="detener">Detener</button>
@@ -43,7 +45,7 @@
                       <div style="display: flex; flex-grow: 1; height: 100%; flex-direction: column;">
                         <textarea id="txtRes" name="txtRes">Resultado</textarea>
                         <div id="grafica-btns-container">
-                          <button type="button" class="btn btn-dark" id="mostrarGrafica">Mostrar grafica</button>
+                          <button type="button" class="btn btn-dark" id="mostrarGrafica" data-bs-toggle="modal" data-bs-target="#exampleModal">Mostrar grafica</button>
                           <div id="txtNumDigitsContainer">
                             <p>Número de digitos calculados: </p>
                             <p id="lblNumDigitsCalculated">0</p>
@@ -54,6 +56,23 @@
           </div>
       </div>
 
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Grafica de distribución</h5>
+              <button type="button" class="btn-close btn-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <canvas id="myChart"></canvas>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </body>
 </html>
