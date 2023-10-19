@@ -10,6 +10,9 @@
     <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.2/bignumber.min.js'></script>
     <script src="./js/bootstrap.min.js"> </script>
     <script src="./js/pi_1mb.js"> </script>
+    <script src="./js/pi_2621440.js"> </script>
+    <script src="./js/pi_10000.js"> </script>
+    <script src="./js/pi_1000.js"> </script>
     <script src="utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -33,7 +36,14 @@
                         <label for="lblNumber">Número de dígitos de pi</label>
                         <input type="number" id="lblNumDigits" value="100" />
 
-                        <button type="button" class="btn btn-dark" id="cargar-pi-1mb">Cargar pi 1MB</button>
+                        <p>Importar dígitos: </p>
+                        <div style="margin: 0 10px;">
+                          <button type="button" class="btn btn-dark" id="cargar-pi-1000">1000</button>
+                          <button type="button" class="btn btn-dark" id="cargar-pi-10000">10000</button>
+                          <button type="button" class="btn btn-dark" id="cargar-pi-2621440">2621440</button>
+                          <button type="button" class="btn btn-dark" id="cargar-pi-1mb">1MB</button>
+                        </div>
+
 
                         <button type="button" class="btn btn-dark" id="iniciar">Generar</button>
                         <button type="button" class="btn btn-dark" id="detener">Detener</button>
@@ -58,10 +68,10 @@
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Grafica de distribución</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Grafica de dígitos</h5>
               <button type="button" class="btn-close btn-dark" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">

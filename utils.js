@@ -76,6 +76,9 @@ const sleep = (millis) => {
     const txtNumDigits = document.getElementById("lblNumDigitsCalculated");
     const btnDetener = document.getElementById("detener");
     const btnCargarPi1MB = document.getElementById("cargar-pi-1mb");
+    const btnCargarPi1000 = document.getElementById("cargar-pi-1000");
+    const btnCargarPi10000 = document.getElementById("cargar-pi-10000");
+    const btnCargarPi2621440 = document.getElementById("cargar-pi-2621440");
     const btnMostrarGrafica = document.getElementById("mostrarGrafica");
 
     btnMostrarGrafica.addEventListener("click", function() {
@@ -115,6 +118,7 @@ const sleep = (millis) => {
             label: '# de Dígitos',
             data: [num0, num1, num2, num3, num4, num5, num6, num7, num8, num9],
             borderWidth: 1,
+            backgroundColor: 'rgba(149, 0, 77, 0.54)'
           }]
         },
         options: {
@@ -132,6 +136,22 @@ const sleep = (millis) => {
       txtRest.value = pi_1mb;
       txtNumDigits.innerText = "1.000.000";
     });
+
+    btnCargarPi1000.addEventListener("click", async function() {
+      txtRest.value = pi_1000;
+      txtNumDigits.innerText = "1.000";
+    });
+
+    btnCargarPi10000.addEventListener("click", async function() {
+      txtRest.value = pi_10000;
+      txtNumDigits.innerText = "10.000";
+    });
+
+    btnCargarPi2621440.addEventListener("click", async function() {
+      txtRest.value = pi_2621440;
+      txtNumDigits.innerText = "2.621.440";
+    } );
+
 
     btnDetener.addEventListener("click", function() {
         DETENER_CALCULO = true;
