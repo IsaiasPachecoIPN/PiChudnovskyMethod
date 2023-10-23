@@ -1,5 +1,6 @@
 var DETENER_CALCULO = false;
 var local_chart;
+var LOADING = false;
 
 function countDigitsInStringUsingRegex(inputString, targetDigit) {
   // Asegúrate de que targetDigit sea una cadena de un solo carácter
@@ -81,6 +82,8 @@ const sleep = (millis) => {
     const btnCargarPi2621440 = document.getElementById("cargar-pi-2621440");
     const btnMostrarGrafica = document.getElementById("mostrarGrafica");
 
+    const spinnerLoading = document.getElementById("spinner_loading");
+
     btnMostrarGrafica.addEventListener("click", function() {
       
       let data = txtRest.value;
@@ -154,12 +157,16 @@ const sleep = (millis) => {
 
 
     btnDetener.addEventListener("click", function() {
+        spinnerLoading.style.display = "None";
         DETENER_CALCULO = true;
     });
 
     btnIniciar.addEventListener("click", async function() {
 
         DETENER_CALCULO = false;
+        
+        //Cambiar display:none de spinnerLoading
+        spinnerLoading.style.display = "inline-block";
 
         let iter = parseInt(inputNumDigits.value)+1;
 
@@ -179,6 +186,8 @@ const sleep = (millis) => {
             if (DETENER_CALCULO)
                 break;
         }
+
+        
         
     });
 
